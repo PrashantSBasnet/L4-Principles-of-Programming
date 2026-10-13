@@ -1,0 +1,52 @@
+--- Pointers 
+
+#include <stdio.h>
+
+int main(){
+    int age = 20;
+    int *ptr = &age; 
+    printf("Value of age: %d\n",age);
+    printf("Address of age: %p\n", (void *)&age);
+    printf("Address of age via pointer: %p\n", (void *)ptr);
+    printf("Derefrencing a pointer: %d\n", *ptr );
+
+    return 0;
+}
+
+
+
+--- Changing the value through a pointer
+
+#include <stdio.h>
+
+int main(){
+    int marks =70;
+    int *ptr = &marks; 
+
+    printf("Before: %d\n", marks);
+
+    *ptr =95;
+
+    printf("After: %d\n", marks);
+
+    return 0;
+    
+}
+
+---- Modifying a variable inside a function
+#include <stdio.h>
+
+void changeValue(int *ptr){
+    *ptr =100;
+}
+
+int main(){
+    int x = 10; 
+    changeValue(&x);
+    printf("%d\n", x);
+    return 0;
+}
+
+
+
+
